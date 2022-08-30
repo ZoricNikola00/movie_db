@@ -30,9 +30,6 @@ body {
   margin: 0 10px;
   cursor: pointer;
 }
-.formSrchNav{
-  margin-left: 300px;
-}
 .menuNav{
   display: none;
 }
@@ -47,6 +44,7 @@ body {
   transform: translateX(50%);
   background-color: antiquewhite;
   display: flex;
+  align-items: flex-start;
   width: 100px;
   flex-direction: column;
   height: auto;
@@ -56,11 +54,35 @@ body {
   list-style: none;
   text-transform: capitalize;
   margin: 10px 0;
+  padding: 2px;
   font-size: 18px;
   color: #273b55;
 }
 .subList:hover{
-  color: #090d13;
+  border-bottom: 1px solid #273b55;
+}
+.formSrchNav{
+  position: relative;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  margin-left: 200px;
+}
+.formSrchNav input{
+  border: 0;
+  border-radius: 10px;
+  padding: 5px 15px;
+  width: 100%;
+  outline: none;
+  font-size: 18px;
+}
+.srchBtn{
+  position: absolute;
+  right: 0;
+  border: 0;
+  background-color: transparent;
+  font-size: 20px;
+  color: #273b55;
 }
 @media(max-width:1080px){
 

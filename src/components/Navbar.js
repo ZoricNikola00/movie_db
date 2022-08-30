@@ -17,7 +17,7 @@ const Navbar = () => {
                 {showMenu && <div className='closeMenu' onClick={()=>setShowMenu(false)}><FaTimes/></div>}
                 {sublinks.map((x,i)=>{
                     if(!x.links){
-                        return <li key={i} className='list'>LINKS</li>
+                        return <li key={i} className='list'>{x.page}</li>
                     }
                     return <Submenu  key={i} {...x}/>
                 })}
