@@ -1,13 +1,116 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  width: 100%;
+  background-color: rgb(19, 43, 88);
+  align-items: center;
+  -webkit-box-shadow: 0px 0px 13px 3px #000000; 
+  box-shadow: 0px 0px 13px 3px #000000;
+}
+.logo{
+  font-size: 50px;
+  color: antiquewhite;
+  cursor: pointer;
+}
+.nav-list{
+  display: flex;
+}
+.list{
+  position: relative;
+  list-style: none;
+  font-size: 18px;
+  color: antiquewhite;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.formSrchNav{
+  margin-left: 300px;
+}
+.menuNav{
+  display: none;
+}
+.closeMenu{
+  display: none;
+}
+
+.sub{
+  position: absolute;
+  right: 50%;
+  border-radius: 30px;
+  transform: translateX(50%);
+  background-color: antiquewhite;
+  display: flex;
+  width: 100px;
+  flex-direction: column;
+  height: auto;
+  z-index: 1;
+}
+.subList{
+  list-style: none;
+  text-transform: capitalize;
+  margin: 10px 0;
+  font-size: 18px;
+  color: #273b55;
+}
+.subList:hover{
+  color: #090d13;
+}
+@media(max-width:1080px){
+
+  .formSrchNav{
+    display: none;
+  }
+  .menuContainer{
+    position: fixed;
+    width: 300px;
+    background-color: #273b55;
+    top: 0;
+    right: 0;
+    height: 100%;
+    transform: translateX(100%);
+    transition: .5s;
+  }
+  .active.menuContainer{
+    transform: translateX(0%);
+  }
+  .nav-list{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-list li{
+    margin: 20px 0;
+    cursor: pointer;
+  }
+  .menuNav{
+    display: flex;
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: antiquewhite;
+    font-size: 50px;
+    cursor: pointer;
+  }
+  .closeMenu{
+    display: block;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: antiquewhite;
+  }
+  .sub{
+    border-radius: 0;
+    width: 100%;
+    left: -190px;
+  }
 }
