@@ -3,9 +3,11 @@ import sublinks from '../menuData'
 import {FaSearch,FaTimes} from 'react-icons/fa/'
 import {FiMenu} from 'react-icons/fi/'
 import Submenu from './Submenu'
+import { useGlobalContext } from '../context'
 
 const Navbar = () => {
     const [showMenu,setShowMenu]=useState(false)
+    const {query,changeQuery,submitSearch}=useGlobalContext()
   return (
     <nav className='nav'>
         <h1 className='logo'>
@@ -23,9 +25,9 @@ const Navbar = () => {
                 })}
             </ul>
         </div>
-        <form className='formSrchNav' onSubmit=''>
-            <input type='text'/>
-            <button className='srchBtn'><FaSearch/></button>
+        <form className='formSrchNav' onSubmit={submitSearch}>
+            <input type='text' value={query} onChange={changeQuery}/>
+            <button className='srchBtn' type='submit'><FaSearch/></button>
         </form>
     </nav>
   )
