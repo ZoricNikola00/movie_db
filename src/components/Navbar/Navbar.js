@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
-import sublinks from '../menuData'
+import sublinks from '../../menuData'
 import {FaTimes} from 'react-icons/fa/'
 import {FiMenu} from 'react-icons/fi/'
 import Submenu from './Submenu'
-import { useGlobalContext } from '../context'
 import {Link} from 'react-router-dom'
 import SearchBar from './SearchBar'
 
 const Navbar = () => {
     const [showMenu,setShowMenu]=useState(false)
-    const {query,changeQuery,submitSearch}=useGlobalContext()
   return (
     <nav className='nav'>
         <h1 className='logo'>
