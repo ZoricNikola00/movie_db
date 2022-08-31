@@ -10,6 +10,7 @@ import People from "./pages/People";
 import Favorite from "./pages/Favorite";
 import Watchlist from "./pages/Watchlist";
 import SearchPage from "./pages/SearchPage";
+import SingleItem from "./pages/SingleItem";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path="/about/" element={<About/>}/>
           <Route path="/searchPage/:query" element={<SearchPage/>}/>
+          <Route path="/singleItem/:type/:id" element={<SingleItem/>}/>
           <Route path="/popularMovies/" element={<PopularMovies/>}/>
           <Route path="/topRatedMovies/" element={<TopRatedMovies/>}/>
           <Route path="/popularTV/" element={<PopularTVShows/>}/>

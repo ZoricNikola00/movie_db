@@ -1,3 +1,4 @@
+import NowPlaying from "../components/Home/NowPlaying"
 import SearchBar from "../components/Home/SearchBar"
 
 const Home = () => {
@@ -8,7 +9,7 @@ const Home = () => {
           <img className="imgHome" src={img}/>
           <h1 className="homeTitle">Welcome To The MovieDB</h1>
           <SearchBar/>
-          
+          <NowPlaying/>
         </div>  
       </div>
   )

@@ -14,7 +14,7 @@ const SearchBar = () => {
     }
   return (
     <form className='formSrchHome' onSubmit={submitSearch}>
-        <input type='text' value={query} onChange={changeQuery}/>
+        <input type='text' value={query} onChange={changeQuery} placeholder='Search MovieDB'/>
         <button className='srchBtnHome' type='submit'><FaSearch/></button>
     </form>
   )
