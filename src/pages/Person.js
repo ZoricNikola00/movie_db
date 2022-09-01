@@ -81,7 +81,7 @@ const Person = () => {
                     const titleCorrect=media_type==='tv'?name:title
                     return <div key={id} className='allMovie'>
                         <p>{date}</p>
-                        <p className='allTitle'>{titleCorrect}</p>
+                        <Link to={`/singleItem/${media_type}/${id}`}><p className='allTitle'>{titleCorrect}</p></Link>
                         <p>as</p>
                         <p>{character}</p>
                     </div>
