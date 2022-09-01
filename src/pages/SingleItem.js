@@ -61,7 +61,7 @@ const SingleItem = () => {
                         <p className="castCharacter">{character}</p>
                     </div>
                 })}
-                <div className="viewAllCast">View More<FaArrowRight/></div>
+                <Link to={``}></Link><div className="viewAllCast">View More<FaArrowRight/></div>
             </div>
             <div className="additionalInfo">
                 <div >
