@@ -13,12 +13,11 @@ const genders={
 const Person = () => {
     const {id}=useParams()
     const {fetchData}=useGlobalContext()
-    const [showBio,setShowBio]=useState(false)
+    const [showBio,setShowBio]=useState(true)
     const{data:person,isLoading,isError:errPerson,error}=useQuery(['person',id],()=>fetchData(`https://api.themoviedb.org/3/person/${id}?api_key=72de8895bb64376912ef844faac64a10&language=en-US`))
     const{data:social,isLoading:loadSocial,isError:errSocial}=useQuery(['social'],()=>fetchData(`https://api.themoviedb.org/3/person/${id}/external_ids?api_key=72de8895bb64376912ef844faac64a10&language=en-US`))
     const{data:movieCredits,isLoading:loadMovies,isError:errCredits}=useQuery(['movie'],()=>fetchData(`https://api.themoviedb.org/3/person/${id}/combined_credits?api_key=72de8895bb64376912ef844faac64a10&language=en-US`))
 
-    console.log(person)
     if(isLoading || loadSocial || loadMovies){
         return <ReactLoading className='loader' type='spinningBubbles' color={'#273b55'} height={'300px'} width={'300px'}/>
     }
@@ -44,10 +43,10 @@ const Person = () => {
             <h4>Place of Birth</h4>
             <p>{place_of_birth}</p>
             <div className='socials'>
-                {<a href={`https://www.imdb.com/name/${imdb_id}`}><FaImdb/></a>}
-                {<a href={`https://www.facebook.com/${facebook_id}`}><FaFacebook/></a>}
-                {<a href={`https://www.twitter.com/${twitter_id}`}><FaTwitter/></a>}
-                {<a href={`https://www.instagram.com/${instagram_id}`}><FaInstagram/></a>}
+                {imdb_id && <a href={`https://www.imdb.com/name/${imdb_id}`}><FaImdb/></a>}
+                {facebook_id && <a href={`https://www.facebook.com/${facebook_id}`}><FaFacebook/></a>}
+                {twitter_id && <a href={`https://www.twitter.com/${twitter_id}`}><FaTwitter/></a>}
+                {instagram_id && <a href={`https://www.instagram.com/${instagram_id}`}><FaInstagram/></a>}
             </div>
         </div>
         <div className='person-info-right'>
@@ -57,6 +56,37 @@ const Person = () => {
                 {biography.length>600 &&<span onClick={()=>setShowBio(p=>!p)} className="readMore">
                 {biography.length && showBio ? "...Read More" : " Show Less"}</span>}
             </p>
+            <h2>Known for...</h2>
+            <div className='knownFor'>
+                {(movieKnown.length>10?movieKnown.slice(0,10):movieKnown).filter((x,i,a)=>x?.id!==a[i+1]?.id).map((movie)=>{
+                    const {name,media_type,title,poster_path,id}=movie
+                    const titleCorrect=media_type==='tv'?name:title
+
+                    
+                    return <div key={id} className='movieKnownFor'>
+                        <Link to={`/singleItem/${media_type}/${id}`}><img src={`${img_path}${poster_path}`}/></Link>
+                        <p>{titleCorrect}</p>
+                        </div>
+                })}
+            </div>
+            <div className='allMovies'>
+                <h3>Acting</h3>
+                {movieCredits?.cast?.sort((a,b)=>{
+        const dateA = a.release_date ? a.release_date.slice(0,4): a.first_air_date && a.first_air_date.slice(0,4)
+        const dateB= b.release_date ? b.release_date.slice(0,4) : b.first_air_date && b.first_air_date.slice(0,4)
+        return dateB-dateA
+    }).map(movie=>{
+                    const {title,character,media_type,id,name,release_date,first_air_date}=movie
+                    const date = release_date ? release_date.slice(0,4): first_air_date && first_air_date.slice(0,4)   
+                    const titleCorrect=media_type==='tv'?name:title
+                    return <div key={id} className='allMovie'>
+                        <p>{date}</p>
+                        <p className='allTitle'>{titleCorrect}</p>
+                        <p>as</p>
+                        <p>{character}</p>
+                    </div>
+                })}
+            </div>
         </div>
     </div>
   )
