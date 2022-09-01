@@ -11,6 +11,7 @@ import Favorite from "./pages/Favorite";
 import Watchlist from "./pages/Watchlist";
 import SearchPage from "./pages/SearchPage";
 import SingleItem from "./pages/SingleItem";
+import Person from "./pages/Person";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/popularTV/" element={<PopularTVShows/>}/>
           <Route path="/topRatedTV/" element={<TopRatedTVShows/>}/>
           <Route path="/people/" element={<People/>}/>
+          <Route path="/person/:id" element={<Person/>}/>
           <Route path="/favorite/" element={<Favorite/>}/>
           <Route path="/watchlist/" element={<Watchlist/>}/>
         </Routes>
