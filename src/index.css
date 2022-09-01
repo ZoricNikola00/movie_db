@@ -329,7 +329,7 @@ color:#273b55;
   cursor: pointer;
 }
 .viewAllCast:hover{
-  color: #273b55;
+  color: rgb(79, 122, 160)
 }
 .imdbSingle{
   font-size: 40px;
