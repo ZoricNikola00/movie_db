@@ -11,7 +11,6 @@ const SingleItem = () => {
 
     const {data:people,isLoading:loadPeople}=useQuery(['people'],()=>fetchData(`https://api.themoviedb.org/3/${type}/${id}/credits?api_key=72de8895bb64376912ef844faac64a10&language=en-US`))
 
-    console.log(data)
     if(isLoading){
         return <ReactLoading className='loader' type='spinningBubbles' color={'#273b55'} height={'300px'} width={'300px'}/>
     }
@@ -55,7 +54,7 @@ const SingleItem = () => {
                 {people?.cast?.slice(0,8).map(person=>{
                     const {id,character,name,profile_path}=person
                     return <div key={id} className='castPerson'>
-                        <img src={`${img_path}${profile_path}`}/>
+                        <Link to={`/person/${id}`}><img src={`${img_path}${profile_path}`}/></Link>
                         <p className="castName">{name}</p>
                         <p className="castCharacter">{character}</p>
                     </div>
