@@ -7,7 +7,7 @@ const SingleItem = () => {
     const {id,type}=useParams()
     const {fetchData}=useGlobalContext()
     const img_path='https://image.tmdb.org/t/p/w1280'
-    const {data,isError,isFetching,isLoading,error}=useQuery(['movie',id],()=>fetchData(`https://api.themoviedb.org/3/${type}/${id}?api_key=72de8895bb64376912ef844faac64a10&language=en-US`))
+    const {data,isError,isLoading,error}=useQuery(['movie',id],()=>fetchData(`https://api.themoviedb.org/3/${type}/${id}?api_key=72de8895bb64376912ef844faac64a10&language=en-US`))
 
     const {data:people,isLoading:loadPeople}=useQuery(['people'],()=>fetchData(`https://api.themoviedb.org/3/${type}/${id}/credits?api_key=72de8895bb64376912ef844faac64a10&language=en-US`))
 
@@ -61,7 +61,7 @@ const SingleItem = () => {
                         <p className="castCharacter">{character}</p>
                     </div>
                 })}
-                <Link to={``}></Link><div className="viewAllCast">View More<FaArrowRight/></div>
+                <Link className="viewAllCast" to={`cast`}><div>View More<FaArrowRight/></div></Link>
             </div>
             <div className="additionalInfo">
                 <div >

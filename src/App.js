@@ -25,7 +25,7 @@ function App() {
           <Route path="/about/" element={<About/>}/>
           <Route path="/searchPage/:query" element={<SearchPage/>}/>
           <Route path="/singleItem/:type/:id" element={<SingleItem/>}/>
-          <Route path='singleItem/:type/:id/cast' element={<Cast/>}/>
+          <Route path='/singleItem/:type/:id/cast' element={<Cast/>}/>
           <Route path="/popularMovies/" element={<PopularMovies/>}/>
           <Route path="/topRatedMovies/" element={<TopRatedMovies/>}/>
           <Route path="/popularTV/" element={<PopularTVShows/>}/>
