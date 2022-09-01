@@ -319,6 +319,18 @@ color:#273b55;
   margin-right: 100px;
   
 }
+.viewAllCast{
+  display: flex;
+  align-items: center;
+  height: 30px;
+  margin: auto;
+  font-size: 30px;
+  color: aliceblue;
+  cursor: pointer;
+}
+.viewAllCast:hover{
+  color: #273b55;
+}
 .imdbSingle{
   font-size: 40px;
   cursor: pointer;

@@ -2,7 +2,7 @@ import { useParams,Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
 import { useQuery } from "@tanstack/react-query";
 import ReactLoading from 'react-loading';
-import {FaImdb,FaLink} from 'react-icons/fa'
+import {FaImdb,FaLink,FaArrowRight} from 'react-icons/fa'
 const SingleItem = () => {
     const {id,type}=useParams()
     const {fetchData}=useGlobalContext()
@@ -61,6 +61,7 @@ const SingleItem = () => {
                         <p className="castCharacter">{character}</p>
                     </div>
                 })}
+                <div className="viewAllCast">View More<FaArrowRight/></div>
             </div>
             <div className="additionalInfo">
                 <div >
