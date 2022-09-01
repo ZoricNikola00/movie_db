@@ -2,7 +2,7 @@ import { useParams,Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
 import { useQuery } from "@tanstack/react-query";
 import ReactLoading from 'react-loading';
-
+import {FaImdb} from 'react-icons/fa'
 const SingleItem = () => {
     const {id,type}=useParams()
     const {fetchData}=useGlobalContext()
@@ -11,7 +11,7 @@ const SingleItem = () => {
 
     const {data:people,isLoading:loadPeople}=useQuery(['people'],()=>fetchData(`https://api.themoviedb.org/3/${type}/${id}/credits?api_key=72de8895bb64376912ef844faac64a10&language=en-US`))
 
-    console.log(people)
+    console.log(data)
     if(isLoading){
         return <ReactLoading className='loader' type='spinningBubbles' color={'#273b55'} height={'300px'} width={'300px'}/>
     }
@@ -19,7 +19,7 @@ const SingleItem = () => {
         return <div>{error}</div>
     }
 
-    const {title,homepage,vote_average,backdrop_path,genres,original_language,tagline,runtime,release_date,poster_path,overview,original_title}=data
+    const {budget,revenue,title,homepage,status,vote_average,backdrop_path,genres,original_language,tagline,runtime,release_date,poster_path,overview,original_title}=data
     const ratingColor={
         border:vote_average>6.99?'green 4px solid':vote_average>3.99?'yellow 4px solid':'red 4px solid'
     }
@@ -50,11 +50,44 @@ const SingleItem = () => {
                 </div>
             </div>
         </div>
-        <div>
-            {people?.cast?.slice(0,8).map(person=>{
-                const {id,character,name,profile_path}=person
-                return <div>{character}</div>
-            })}
+        <div className="castAndInfo">
+            <div className="castBelow">
+                {people?.cast?.slice(0,8).map(person=>{
+                    const {id,character,name,profile_path}=person
+                    return <div key={id} className='castPerson'>
+                        <img src={`${img_path}${profile_path}`}/>
+                        <p className="castName">{name}</p>
+                        <p className="castCharacter">{character}</p>
+                    </div>
+                })}
+            </div>
+            <div className="additionalInfo">
+                <div >
+                    <FaImdb/>
+                </div>
+                <div>
+                    <p>Original Title</p>
+                    <p>{original_title}</p>
+                </div>
+                <div>
+                    <p>Status</p>
+                    <p>{status}</p>
+                </div>
+                <div>
+                    <p>Original Language</p>
+                    <p>{original_language}</p>
+                </div>
+                {budget>0 && <div>
+                        <p>Budget</p>
+                        <p>{budget}</p>
+                    </div>
+                }
+                {revenue>0 && <div>
+                        <p>Revenue</p>
+                        <p>{revenue}</p>
+                    </div>
+                }
+            </div>
         </div>
     </div>
   )

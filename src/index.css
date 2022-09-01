@@ -295,7 +295,60 @@ background-color: #030f22b0;
   color: aliceblue;
   font-size: 18px;
 }
+.castAndInfo{
+  display: flex;
+  margin: 50px 100px;
+}
+.castBelow{
+  position: relative;
+  display: flex;
+  width: 1100px;
+  height: auto;
+  margin: 10px;
+  overflow-x: scroll;
+  margin-right: 100px;
+  
+}
 
+.castPerson{
+  width: 200px;
+  margin: 20px;
+  border-radius: 30px 30px 30px 30px;
+  background-color: antiquewhite;
+  -webkit-box-shadow: 0px 0px 24px -3px aliceblue;
+-moz-box-shadow: 0px 0px 24px -3px aliceblue;
+box-shadow: 0px 0px 24px -3px aliceblue;
+}
+.castPerson img{
+  width: 200px;
+  border-radius: 30px 30px 0 0;
+}
+.castName{
+  margin: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.castCharacter{
+  margin: 10px;
+}
+.additionalInfo{
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+}
+.additionalInfo div{
+  margin-bottom: 5px;
+  color: aliceblue;
+
+}
+.additionalInfo div p:first-of-type{
+  font-size: 22px;
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+.additionalInfo div p{
+  margin-top: 0;
+}
 @media(max-width:1080px){
 
   .formSrchNav{
