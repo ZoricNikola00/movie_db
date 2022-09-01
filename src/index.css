@@ -270,7 +270,7 @@ background-color: #030f22b0;
 .ratings{
   display: flex;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 .ratings p{
   font-size: 25px;
@@ -283,6 +283,16 @@ background-color: #030f22b0;
 }
 .desc{
   width: 600px;
+}
+.homepage{
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 20px; 
+  margin-left: 10px;
+  cursor: pointer;
+}
+.homepage:hover{
+color:#273b55;
 }
 .headDesc{
   color: aliceblue;
@@ -308,6 +318,14 @@ background-color: #030f22b0;
   overflow-x: scroll;
   margin-right: 100px;
   
+}
+.imdbSingle{
+  font-size: 40px;
+  cursor: pointer;
+}
+.imdbSingle:hover{
+  color: #273b55;
+  background-color: aliceblue;
 }
 
 .castPerson{
