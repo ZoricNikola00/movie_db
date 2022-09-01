@@ -10,7 +10,7 @@ const SingleMovieNP = ({id,poster_path,title,vote_average,release_date}) => {
         <Link to={`/singleItem/movie/${id}`}><img className='sm-img' src={`${img_path}${poster_path}`}/></Link>
         <h3>{title}</h3>
         <p>{release_date}</p>
-        <div style={ratingColor} className='voteScoreNP'>{vote_average*10}</div>
+        <div style={ratingColor} className='voteScore'>{vote_average*10}</div>
     </div>
   )
 }

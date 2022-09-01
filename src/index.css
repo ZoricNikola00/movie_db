@@ -170,7 +170,7 @@ body {
 .singleMovieNP p{
   color: rgb(51, 68, 99);
 }
-.voteScoreNP{
+.voteScore{
   position: absolute;
   background-color:#273b55;
   color: antiquewhite;
@@ -184,47 +184,118 @@ body {
   height: 20px;
   padding: 10px;
   border-radius: 50%;
-  border: 3px solid black;
 }
+.voteScore.single{
+position: relative;
+font-size: 30px;
+width: 40px;
+height: 40px;
+top: 0;
+left: 0;
+}
+
 .overviewCont{
   position: relative;
   display: flex;
+  width: 100%;
+  height: 900px;
   
 }
-.backImg{
-  position: fixed;
+.shadow{
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 800px;
-  opacity: 0.5;
-  z-index: -1;
-  object-fit: cover;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2;
+}
+.shadow::before{
+content: '';
+position: fixed;
+width: 100%;
+top: 0;
+left: 0;
+height: 100%;
+z-index: -1;
+background-color: #030f22b0;
 }
 .posterSingle{
-  margin: 50px;
+  margin: 100px;
   width: 450px;
   height: 500px;
   margin-right: 20px;
 }
 .posterSingle img{
-  width: 100%;
+  width: 450px;
   border-radius: 30px;
 }
 .overview{
-  margin: 50px;
+  margin: 100px;
 }
 .title{
   display: flex;
   align-items: center;
-  color: antiquewhite;
+  height: 70px;
+  color: aliceblue;
+  margin-bottom: 0;
 }
 .title h1{
   font-size: 50px;
   margin-right: 10px;
 }
 .title small{
-  font-size: 20px;
+  font-size: 40px;
   color: #a6afbb;
 }
+.infoItem{
+  display: flex;
+  align-items: center;
+  color: aliceblue;
+  height: 21px;
+}
+.genres{
+  display: flex;
+}
+.genres p{
+  margin-right:5px;
+}
+.dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: aliceblue;
+}
+.ratings{
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+.ratings p{
+  font-size: 25px;
+  color: aliceblue;
+  margin: 0 10px;
+}
+.tag{
+  color: aliceblue;
+  font-style: italic;
+}
+.desc{
+  width: 600px;
+}
+.headDesc{
+  color: aliceblue;
+  font-weight: bolder;
+  margin-bottom: 0;
+  font-size: 22px;
+}
+.mainDesc{
+  margin-top: 0;
+  color: aliceblue;
+  font-size: 18px;
+}
+
 @media(max-width:1080px){
 
   .formSrchNav{
