@@ -14,6 +14,16 @@ const AppProvider = ({ children }) => {
         const localData=localStorage.getItem('movies')
         return localData && localData.length>0?JSON.parse(localData):initialState
       })
+
+      const toggle=(id,title,img,media,which)=>{
+        dispatch({type:'TOGGLE',movie:{
+          id,title,img,media
+        },which:which})
+      }
+      
+      const remove=(id,which)=>{
+        dispatch({type:'REMOVE',id:id,which:which})
+      }
     const fetchData=async(url)=>{
         return await axios(url).then(res=>{return res.data}).catch(err=>console.log(err))
             
