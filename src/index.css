@@ -157,15 +157,20 @@ body {
   width: 100%;
   display: flex;
   overflow-x: scroll;
+  margin-bottom: 100px;
+}
+.homePage h2{
+  color: #273b55;
+  margin-left: 10px;
 }
 .singleMovieNP{
-  width: 250px;
+  width: 240px;
   margin: 10px;
   position: relative;
 }
 .sm-img{
   border-radius: 30px;
-  width: 250px;
+  width: 240px;
   height: 375px;
 }
 .singleMovieNP h3{
