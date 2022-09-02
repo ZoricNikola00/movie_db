@@ -55,8 +55,9 @@ body {
   transform: translateX(50%);
   background-color: antiquewhite;
   display: flex;
-  align-items: flex-start;
-  width: 100px;
+  align-items: center;
+  width: 120px;
+  padding-right: 40px;
   flex-direction: column;
   height: auto;
   z-index: 1;
@@ -65,12 +66,15 @@ body {
   list-style: none;
   text-transform: capitalize;
   margin: 10px 0;
-  padding: 2px;
+  padding: 10px;
   font-size: 18px;
   color: #273b55;
 }
 .subList:hover{
-  border-bottom: 1px solid #273b55;
+  background-color: #273b55;
+  color: aliceblue;
+  padding: 10px;
+  border-radius: 30px;
 }
 .formSrchNav{
   position: relative;
@@ -588,9 +592,22 @@ margin-bottom: 30px;
     color: antiquewhite;
   }
   .sub{
+    align-items: flex-start;
+    padding: 0;
     border-radius: 0;
-    width: 100%;
+    width: 300px;
     left: -190px;
+  }
+  .sub a{
+    align-items: flex-start;
+    padding: 0;
+    border-radius: 0;
+    width: 300px;
+    left: -190px;
+  }
+  .subList:hover{
+    border-radius: 0;
+    width: 300px;
   }
   .homePage{
     width: 800px;
