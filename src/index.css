@@ -673,7 +673,64 @@ box-shadow: 0px 0px 24px -3px #273b55;
   text-decoration: none;
   color: aliceblue;
 }
+.searchPage{
+  display: flex;
+  width: 1500px;
+  margin: 100px auto;
+}
+.searchSide{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 20px;
+  margin-right: 50px;
+  border-radius: 30px;
+  background-color: #273b55;
+  color: aliceblue;
+  height: 500px;
+}
+.radio{
+  font-size: 20px;
+  margin: 10px 0;
+}
+.searchItems{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 1000px;
+}
+.searchItem{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color:#273b55;
+  padding:5px 15px;
+  height: 180px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+.searchItem img{
+  width: 100px;
+  height: 150px;
+  border-radius: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.searchInfo{
+  color: aliceblue;
+}
+.searchInfo h3{
+  margin-bottom: 0;
+  cursor: pointer;
 
+}
+.searchInfo small{
+  color:rgb(169, 177, 184)
+}
+.searchInfo p{
+  margin: 0;
+}
 @media(max-width:1080px){
 
   .formSrchNav{
