@@ -1,9 +1,19 @@
 import axios from 'axios'
 import { useState, useContext, useReducer, useEffect,createContext } from 'react'
+import { reducer } from './reducer'
 const AppContext = createContext()
+
+const initialState={
+    'favorites':[],
+    'watchlist':[]
+  }
 
 
 const AppProvider = ({ children }) => {
+    const [movies,dispatch]=useReducer(reducer,[],()=>{
+        const localData=localStorage.getItem('movies')
+        return localData && localData.length>0?JSON.parse(localData):initialState
+      })
     const fetchData=async(url)=>{
         return await axios(url).then(res=>{return res.data}).catch(err=>console.log(err))
             
