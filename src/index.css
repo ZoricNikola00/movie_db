@@ -241,7 +241,7 @@ background-color: #030f22b0;
   margin-bottom: 0;
 }
 .title h1{
-  font-size: 50px;
+  font-size: 40px;
   margin-right: 10px;
 }
 .title small{
@@ -554,6 +554,7 @@ margin-bottom: 30px;
     height: 100%;
     transform: translateX(100%);
     transition: .5s;
+    z-index: 1;
   }
   .active.menuContainer{
     transform: translateX(0%);
