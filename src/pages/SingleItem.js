@@ -89,6 +89,9 @@ const SingleItem = () => {
                         <p>${String(revenue).split('').reverse().map((x,i)=>i!==0 && (i+3)%3===0?(x+','):x).reverse().join('')}</p>
                     </div>
                 }
+                <Link to='cast'><h3>
+                    View All Cast And Crew
+                </h3></Link>
             </div>
         </div>
     </div>

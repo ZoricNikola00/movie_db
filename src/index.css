@@ -378,6 +378,14 @@ box-shadow: 0px 0px 24px -3px aliceblue;
   flex-direction: column;
   font-size: 18px;
 }
+.additionalInfo a{
+  color: aliceblue;
+  text-decoration: none;
+  border-bottom:1px solid aliceblue ;
+}
+.additionalInfo a:hover{
+  color: rgb(79, 122, 160)
+}
 .additionalInfo div{
   margin-bottom: 5px;
   color: aliceblue;
