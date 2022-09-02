@@ -81,12 +81,12 @@ const SingleItem = () => {
                 </div>
                 {budget>0 && <div>
                         <p>Budget</p>
-                        <p>{budget}</p>
+                        <p>${String(budget).split('').reverse().map((x,i)=>i!==0 && (i+3)%3===0?(x+','):x).reverse().join('')}</p>
                     </div>
                 }
                 {revenue>0 && <div>
                         <p>Revenue</p>
-                        <p>{revenue}</p>
+                        <p>${String(revenue).split('').reverse().map((x,i)=>i!==0 && (i+3)%3===0?(x+','):x).reverse().join('')}</p>
                     </div>
                 }
             </div>
