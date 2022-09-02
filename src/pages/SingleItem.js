@@ -2,10 +2,10 @@ import { useParams,Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
 import { useQuery } from "@tanstack/react-query";
 import ReactLoading from 'react-loading';
-import {FaImdb,FaLink,FaArrowRight} from 'react-icons/fa'
+import {FaImdb,FaLink,FaArrowRight,FaBookmark, FaStar} from 'react-icons/fa'
 const SingleItem = () => {
     const {id,type}=useParams()
-    const {fetchData}=useGlobalContext()
+    const {fetchData,toggle,watchlist,favorites}=useGlobalContext()
     const img_path='https://image.tmdb.org/t/p/w1280'
     const {data,isError,isLoading,error}=useQuery(['movie',id],()=>fetchData(`https://api.themoviedb.org/3/${type}/${id}?api_key=72de8895bb64376912ef844faac64a10&language=en-US`))
 
@@ -24,12 +24,19 @@ const SingleItem = () => {
     const ratingColor={
         border:vote_average>6.99?'green 4px solid':vote_average>3.99?'yellow 4px solid':'red 4px solid'
     }
+    const styleStar={
+        color:favorites?.some(x=>parseInt(x.id)===parseInt(id))?'rgb(196, 196, 36)':'rgb(128, 126, 126)'
+       }
+    const styleBookmark={
+        color:watchlist?.some(x=>parseInt(x.id)===parseInt(id))?'rgb(196, 196, 36)':'rgb(128, 126, 126)'
+    }
   return (
     <div className="singleItem">
         <div className="overviewCont">
             <div className="shadow" style={{backgroundImage:`url(${img_path}${backdrop_path})`,backgroundSize:'cover'}}></div>
             <div className="posterSingle">
                 <img src={`${img_path}${poster_path}`}/>
+                <div name='watchlist' className="bookmark" onClick={(e)=>toggle(id,title,poster_path,type,e.currentTarget.attributes.name.value)}><FaBookmark style={styleBookmark} className="star"/></div>
             </div>
             <div className="overview">
                 <div className="title"><h1>{titleCorrect}</h1><small>({date})</small><a className="homepage" href={homepage}><FaLink/></a></div>
@@ -43,6 +50,7 @@ const SingleItem = () => {
                 <div className="ratings">
                     <div style={ratingColor} className='voteScore single'>{(vote_average*10).toFixed()}</div>
                     <p>Rating</p>
+                    <div name='favorite' onClick={(e)=>toggle(id,title,poster_path,type,e.currentTarget.attributes.name.value)}><FaStar style={styleStar} className="star"/></div>
                 </div>
                 <p className="tag">{tagline}</p>
                 <div className="desc">

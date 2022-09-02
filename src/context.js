@@ -20,7 +20,7 @@ const AppProvider = ({ children }) => {
           id,title,img,media
         },which:which})
       }
-      
+      console.log(movies)
       const remove=(id,which)=>{
         dispatch({type:'REMOVE',id:id,which:which})
       }
@@ -30,7 +30,7 @@ const AppProvider = ({ children }) => {
     }
     console.log(fetchData('https://api.themoviedb.org/3/movie/now_playing?api_key=72de8895bb64376912ef844faac64a10&page='))
 
-    return <AppContext.Provider value={{fetchData}}>{children}</AppContext.Provider>
+    return <AppContext.Provider value={{fetchData,toggle,...movies}}>{children}</AppContext.Provider>
 }
 
 
