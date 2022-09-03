@@ -35,4 +35,13 @@ export const reducer=(state,action)=>{
               }]}
         }
 }
+if(action.type==='REMOVE'){
+    if(action.which==='favorite'){
+        return {...state, favorites:state.favorites.filter(x=>action.id!==x.id)}
+        }
+    if(action.which==='watchlist'){
+        return {...state, watchlist:state.watchlist.filter(x=>action.id!==x.id)}
+    }    
+}
+
 }
