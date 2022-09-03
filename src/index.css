@@ -799,6 +799,22 @@ z-index: 1;
 .rmvFav:hover{
   color: red;
 }
+.about{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 900px;
+  flex-direction: column;
+  margin: 10px auto;
+}
+.about h1{
+  color: #0f243f;
+  font-size: 50px;
+  margin-bottom: 0;
+}
+.about p{
+font-size: 20px;
+}
 @media(max-width:1080px){
 
   .formSrchNav{
@@ -876,5 +892,30 @@ z-index: 1;
   }
   .favorites{
     width: 900px;
+  }
+  .categWrap{
+    width: 900px;
+  }
+  
+  .posterSingle img{
+    width: 300px;
+  }
+  .star{
+    font-size: 40px;
+  }
+  .overview{
+    margin-left: 20px;
+  }
+  .title h1{
+    font-size: 31px;
+  }
+  .title small{
+    font-size: 28px;
+  }
+  .castAndInfo{
+    flex-direction: column;
+  }
+  .castBelow{
+    width: 800px;
   }
 }
