@@ -50,7 +50,7 @@ const SingleItem = () => {
                 <div className="ratings">
                     <div style={ratingColor} className='voteScore single'>{(vote_average*10).toFixed()}</div>
                     <p>Rating</p>
-                    <div name='favorite' onClick={(e)=>toggle(id,title,poster_path,type,e.currentTarget.attributes.name.value)}><FaStar style={styleStar} className="star"/></div>
+                    <div name='favorite' onClick={(e)=>toggle(id,titleCorrect,poster_path,type,e.currentTarget.attributes.name.value)}><FaStar style={styleStar} className="star"/></div>
                 </div>
                 <p className="tag">{tagline}</p>
                 <div className="desc">
