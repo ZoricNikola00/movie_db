@@ -42,7 +42,7 @@ const PopularMovies = () => {
           return (
             <div key={id} className='item'>
               <div className='posterCont'>
-                <div name='watchlist' className="bookmark" onClick={(e)=>toggle(id,title,poster_path,type,e.currentTarget.attributes.name.value)}><FaBookmark style={styleBookmark} className="star"/></div>
+                <div className="bookmark" onClick={(e)=>toggle(id,title,poster_path,type,'watchlist')}><FaBookmark style={styleBookmark} className="star"/></div>
                 <Link to={`/singleItem/${type}/${id}`}><img src={`${img_path}${poster_path}`}/></Link>
                 <div style={ratingColor} className='rating'>{vote_average*10}</div>
               </div>

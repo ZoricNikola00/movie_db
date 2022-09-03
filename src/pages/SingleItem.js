@@ -36,7 +36,7 @@ const SingleItem = () => {
             <div className="shadow" style={{backgroundImage:`url(${img_path}${backdrop_path})`,backgroundSize:'cover'}}></div>
             <div className="posterSingle">
                 <img src={`${img_path}${poster_path}`}/>
-                <div name='watchlist' className="bookmark" onClick={(e)=>toggle(id,title,poster_path,type,e.currentTarget.attributes.name.value)}><FaBookmark style={styleBookmark} className="star"/></div>
+                <div className="bookmark" onClick={(e)=>toggle(id,title,poster_path,type,'watchlist')}><FaBookmark style={styleBookmark} className="star"/></div>
             </div>
             <div className="overview">
                 <div className="title"><h1>{titleCorrect}</h1><small>({date})</small><a className="homepage" href={homepage}><FaLink/></a></div>
@@ -50,7 +50,7 @@ const SingleItem = () => {
                 <div className="ratings">
                     <div style={ratingColor} className='voteScore single'>{(vote_average*10).toFixed()}</div>
                     <p>Rating</p>
-                    <div name='favorite' onClick={(e)=>toggle(id,titleCorrect,poster_path,type,e.currentTarget.attributes.name.value)}><FaStar style={styleStar} className="star"/></div>
+                    <div onClick={(e)=>toggle(id,titleCorrect,poster_path,type,'favorite')}><FaStar style={styleStar} className="star"/></div>
                 </div>
                 <p className="tag">{tagline}</p>
                 <div className="desc">
