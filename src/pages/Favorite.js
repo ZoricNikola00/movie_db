@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { FaTimes } from 'react-icons/fa'
 import { useGlobalContext } from '../context'
-import ReactLoading from 'react-loading';
 
 const img_path='https://image.tmdb.org/t/p/w1280'
 
@@ -17,7 +16,7 @@ const Favorite = () => {
           console.log(favorite)
           return <div key={id} className='favorite'>
                    <Link to={`/singleItem/${media}/${id}/`}><img src={`${img_path}${img}`}/>
-                    <h2>{title}</h2></Link>
+                    <h3>{title}</h3></Link>
                     <button name='favorite' className='rmvFav' onClick={(e)=>remove(id,e.currentTarget.attributes.name.value)}><FaTimes/></button>
                 </div> 
         })}
