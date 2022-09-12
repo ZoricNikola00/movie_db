@@ -1151,5 +1151,15 @@ font-size: 20px;
      .favorite h3{
       padding: 10px;
      }
-     
+     .castCont{
+      width: 100%;
+      flex-direction: column;
+     }
+     .allCast{
+      width: 70%;
+      margin: 10px auto;
+     }
+     .singleCast img{
+      width: 100px;
+     }
 }
