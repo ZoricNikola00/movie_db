@@ -104,7 +104,8 @@ body {
   color: #273b55;
 }
 .homePage{
-  width: 1200px;
+  max-width: 1200px;
+  min-height: auto;
   height: 650px;
   margin: 0 auto;
 }
@@ -815,6 +816,8 @@ z-index: 1;
 .about p{
 font-size: 20px;
 }
+
+
 @media(max-width:1080px){
 
   .formSrchNav{
@@ -929,4 +932,224 @@ font-size: 20px;
   .allMovies{
     width: 500px;
   }
+}
+
+@media(max-width:440px) {
+  .logo{
+    font-size: 40px;
+    margin-right: 50px;
+  }
+  .menuNav{
+    right: 20px;
+  }
+  .menuContainer{
+    width: 200px;
+    z-index: 3;
+  }
+  .homePage{
+    width: auto;
+    height: 400px;
+  }
+  .imgHomeCont{
+    width: auto;
+  }
+  .homeTitle{
+    margin-top: -45px;
+    font-size: 35px;
+    width: 100%;
+  }
+  .formSrchHome{
+    width: auto;
+  }
+  .formSrchHome input{
+    width: auto;
+  }
+  .imgHome{
+    width: 100%;
+    height: 100%;  }
+
+    .nowPlayingMovies{
+      flex-direction: column;
+      align-items: center;
+    }
+    .singleMovieNP{
+      border-bottom: 5px solid #0f243f;
+    }
+    .singleItem{
+      display: flex;
+      flex-direction: column;
+      width: auto;
+    }
+    .overviewCont{
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+    }
+    .posterSingle{
+      margin: 0 auto 30px auto;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+     }
+     .posterSingle img{
+      width: 100%;
+      border-radius: 0;
+
+     }
+     .overview{
+      margin: 0;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      border-bottom: 3px  #0f243f;
+     }
+     .desc{
+      width: 100%;
+     }
+     .headDesc{
+      width: 90%;
+      margin: 0 auto;
+     }
+     .mainDesc{
+      font-size: 14px;
+      width: 90%;
+      margin: 0 auto;
+     }
+     .title{
+      width: 90%;
+      justify-content: center;     
+     }
+     .title small{
+      font-size: 14px;
+     }
+     .title h1{
+      font-size: 20px;
+      margin: 0;
+     }
+     .castAndInfo{
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      margin: 10px auto;
+     }
+     .infoItem{
+      align-items: center;
+      justify-content: center;
+      height: auto;
+      width: 100%;
+     }
+    .voteScore.single{
+      width: 20px;
+      height: 20px;
+      font-size: 20px;
+    }
+    .ratings p{
+      font-size: 18px;
+    }
+     .genres{
+      font-size: 12px;
+     
+     }
+     .tag{
+      width: 90%;
+      margin: 10px auto;
+      font-size: 13px;
+     }
+     .castBelow{
+      flex-direction: row;
+      height:auto;
+      width: 100%;
+      margin: 10px auto;
+      overflow: scroll;
+     }
+     .castPerson{
+      height: 90%;
+     }
+     .castPerson img{
+      width: 150px;
+     }
+     .viewAllCast{
+      display: none;
+     }
+     .additionalInfo{
+      width: 90%;
+      margin: 0 auto;
+     }
+     .additionalInfo div{
+      font-size: 12px;
+     }
+     .person-container{
+      width: 90%;
+     }
+     .person-info-left{
+      width: 30%;
+      font-size: 12px;
+     }
+     .person-info-left h2{
+      font-size: 12px;
+     }
+     .person-info-left img{
+      width: 80px;
+     }
+     .socials{
+      display: flex;
+      flex-direction: column;
+     }
+     .person-info-right{
+      width: 70%;
+      margin: 0;
+      margin-left: 10px;
+      font-size: 14px;
+     }
+     .person-info-right h1{
+      font-size: 18px;
+     }
+     .person-info-right h2{
+      width: 100%;
+     }
+     .allMovies{
+      margin-left: -86px;
+      width: 100%;
+     }
+     .allMovie p{
+      font-size: 12px;
+     }
+     .loader{
+      font-size: 30px;
+     }
+     .categoryCont{
+      width: 100%;
+     }
+     .categoryCont h1{
+      font-size: 30px;
+     }
+     .categWrap,.peopleCont,.favorites{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      width: 90%;
+     }
+     
+     .profile{
+      width: 70%;
+     }
+     .profile img{
+      width: 100%;
+     }
+     .favoriteCont h1{
+      font-size: 40px;
+     }
+     .favorite{
+      width: 90%;
+      height: 100%;
+     }
+     .favorite img{
+      width: 100%;
+     }
+     .favorite h3{
+      padding: 10px;
+     }
+     
 }
