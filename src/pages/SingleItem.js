@@ -5,6 +5,7 @@ import ReactLoading from 'react-loading';
 import {FaImdb,FaLink,FaArrowRight,FaBookmark, FaStar} from 'react-icons/fa'
 const SingleItem = () => {
     const {id,type}=useParams()
+    const width = window.innerWidth<480;
     const {fetchData,toggle,watchlist,favorites}=useGlobalContext()
     const img_path='https://image.tmdb.org/t/p/w1280'
     const {data,isError,isLoading,error}=useQuery(['movie',id],()=>fetchData(`https://api.themoviedb.org/3/${type}/${id}?api_key=72de8895bb64376912ef844faac64a10&language=en-US`))
@@ -33,12 +34,13 @@ const SingleItem = () => {
   return (
     <div className="singleItem">
         <div className="overviewCont">
-            <div className="shadow" style={{backgroundImage:`url(${img_path}${backdrop_path})`,backgroundSize:'cover'}}></div>
+            {!width && <div className="shadow" style={{backgroundImage:`url(${img_path}${backdrop_path})`,backgroundSize:'cover'}}></div>}
             <div className="posterSingle">
                 <img src={`${img_path}${poster_path}`}/>
                 <div className="bookmark" onClick={(e)=>toggle(id,title,poster_path,type,'watchlist')}><FaBookmark style={styleBookmark} className="star"/></div>
             </div>
             <div className="overview">
+                {width && <div className="shadow" style={{backgroundImage:`url(${img_path}${backdrop_path})`,backgroundSize:'cover',backgroundPosition:'center'}}></div>}
                 <div className="title"><h1>{titleCorrect}</h1><small>({date})</small><a className="homepage" href={homepage}><FaLink/></a></div>
                 <div className="infoItem">
                     <div className="genres">
