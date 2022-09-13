@@ -13,12 +13,26 @@ import SearchPage from "./pages/SearchPage";
 import SingleItem from "./pages/SingleItem";
 import Person from "./pages/Person";
 import Cast from "./pages/Cast";
+import {FaArrowUp} from 'react-icons/fa'
+import { useState } from "react";
 
 
 function App() {
+  const [showToTop,setShowToTop]=useState(false)
+window.onscroll=(()=>{
+  if(document.documentElement.scrollTop>100){
+    setShowToTop(true)
+  }
+  else{
+    setShowToTop(false)
+  }
+})
+
+
   return (
     <div className="App">
       <Router>
+        {showToTop && <div onClick={()=>window.scrollTo(0, 0)} className="ToTop"><FaArrowUp/></div>}
         <Navbar/>
         <Routes>
           <Route path='/' element={<Home/>}/>

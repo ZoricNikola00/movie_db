@@ -1190,4 +1190,24 @@ font-size: 20px;
      .searchItem p{
       font-size: 12px;
      }
+     .ToTop{
+      position: fixed;
+      width: 70px;
+      height: 70px;
+      bottom: 15px;
+      background-color: #0f243f;
+      color: aliceblue;
+      border-radius: 50%;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      font-size: 30px;
+      right: 15px;
+      cursor: pointer;
+      transition: .6s;
+      z-index: 2;
+      animation: bounce 1.2s infinite alternate;     }
+     @keyframes bounce {
+      to { transform: scale(1.1); }
+    }
 }
