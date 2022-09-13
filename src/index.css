@@ -1162,4 +1162,32 @@ font-size: 20px;
      .singleCast img{
       width: 100px;
      }
+     .searchPage{
+      flex-direction: column;
+      width: 100%;
+      margin: 50px 0;
+     }
+     .searchSide{
+      width: 70%;
+      margin: 0 auto;
+      margin-bottom: 50px;
+      height: 100%;
+      font-size: 14px;
+     }
+     .searchSide h3{
+      margin: 0;
+     }
+     .searchSide form label{
+      font-size: 14px;
+     }
+     .searchItems{
+      width: 90%;
+      margin: 0 auto;
+     }
+     .searchItem h3{
+      font-size: 16px;
+     }
+     .searchItem p{
+      font-size: 12px;
+     }
 }
