@@ -65,7 +65,7 @@ useEffect(()=>{
                     const {id,gender,poster_path,original_title,name,profile_path,first_air_date,overview,release_date}=x
                     const title=searchType==='movie'?original_title:name
                     const date=searchType==='movie'?release_date:first_air_date
-                    const overviewSlice=width1 && !width2?`${overview.slice(0,280)}...`:width2?`${overview.slice(0,160)}...`:overview
+                    const overviewSlice=width1 && !width2?`${overview?.slice(0,280)}...`:width2?`${overview?.slice(0,160)}...`:overview
                 return <div key={id} className='searchItem'>
                     <img src={`${img_path}${poster_path?poster_path:profile_path}`} onClick={()=>redirect(id,searchType)} alt='Image not found' onError={(e)=>{e.target.onerror=null;e.target.src=`${searchType==='person'?'https://images.assetsdelivery.com/compings_v2/belopoppa/belopoppa2002/belopoppa200200004.jpg':'https://archive.org/download/no-photo-available/no-photo-available.png'}`}}/>
                     <div className='searchInfo'>
