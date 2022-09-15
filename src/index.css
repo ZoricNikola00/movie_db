@@ -816,8 +816,51 @@ z-index: 1;
 .about p{
 font-size: 20px;
 }
-
-
+.quizContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.quizSelection{
+  color: aliceblue;
+  font-size: 20px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 30px;
+  min-width: 300px;
+  height: auto;
+  max-width: auto;
+  background-color:#0f243f;
+}
+.quizSelection form{
+  display: flex;
+  flex-direction: column;
+}
+.quizRadio{
+  margin-top: 10px;
+}
+.strQuiz{
+  width: 120px;
+  margin-top: 30px;
+  margin: 30px auto 0 auto;
+  border-radius: 30px;
+  border: 0;
+  padding: 10px;
+  font-size: 17px;
+  cursor: pointer;
+}
+.quizAnwsers{
+  color: aliceblue;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 30px;
+  min-width: 300px;
+  height: auto;
+  max-width: auto;
+  background-color:#0f243f;
+}
 @media(max-width:1080px){
 
   .formSrchNav{
