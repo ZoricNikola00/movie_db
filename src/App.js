@@ -15,6 +15,7 @@ import Person from "./pages/Person";
 import Cast from "./pages/Cast";
 import {FaArrowUp} from 'react-icons/fa'
 import { useState } from "react";
+import Quiz from "./pages/Quiz";
 
 
 function App() {
@@ -47,6 +48,7 @@ window.onscroll=(()=>{
           <Route path="/people/" element={<People/>}/>
           <Route path="/person/:id" element={<Person/>}/>
           <Route path="/favorite/" element={<Favorite/>}/>
+          <Route path="/quiz/" element={<Quiz/>}/>
           <Route path="/watchlist/" element={<Watchlist/>}/>
         </Routes>
       </Router>

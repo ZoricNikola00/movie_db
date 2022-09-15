@@ -26,6 +26,10 @@ const sublinks = [
       ]
     },
     {
+      page:'Quiz',
+      link:'/quiz'
+    },
+    {
         page:'About',
         link:'/about'
     }
