@@ -31,7 +31,7 @@ body {
 .list{
   position: relative;
   list-style: none;
-  font-size: 22px;
+  font-size: 18px;
   color: antiquewhite;
   margin: 0 10px;
   cursor: pointer;
