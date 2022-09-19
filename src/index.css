@@ -1251,19 +1251,28 @@ top: 10px;
      .categoryCont h1{
       font-size: 30px;
      }
-     .categWrap,.peopleCont,.favorites{
+     .categWrap,.favorites{
       flex-direction: column;
       justify-content: center;
       align-items: center;
       flex-wrap: nowrap;
       width: 90%;
      }
-     
+     .peopleCont{
+      width: 100%;
+     }
      .profile{
-      width: 70%;
+      width: 20%;
+      height: auto;
+      border-radius: 20px;
+      font-size: 10px;
      }
      .profile img{
       width: 100%;
+      border-radius: 20px 20px 0 0;
+     }
+     .profile h3{
+      margin: 5px;
      }
      .favoriteCont h1{
       font-size: 40px;
