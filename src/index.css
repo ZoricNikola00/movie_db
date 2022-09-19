@@ -1243,7 +1243,8 @@ top: 10px;
       font-size: 12px;
      }
      .loader{
-      font-size: 30px;
+      width: 150px !important;
+      height: 150px !important;
      }
      .categoryCont{
       width: 100%;
@@ -1360,7 +1361,7 @@ top: 10px;
       background-color:#0f243f;
     }
     .quizContainer{
-      height: 60vh;
+      height: 100vh;
     }
     .quizSelection select{
       font-size: 12px
@@ -1405,7 +1406,7 @@ top: 10px;
       border-radius: 30px;
       min-width: 200px;
       height: auto;
-      max-width: auto;
+      max-width: 80%;
       background-color:#0f243f;
     }
     
