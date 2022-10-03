@@ -44,7 +44,7 @@ const PopularMovies = () => {
               <div className='posterCont'>
                 <div className="bookmark" onClick={(e)=>toggle(id,title,poster_path,type,'watchlist')}><FaBookmark style={styleBookmark} className="star"/></div>
                 <Link to={`/singleItem/${type}/${id}`}><img src={`${img_path}${poster_path}`}/></Link>
-                <div style={ratingColor} className='rating'>{vote_average*10}</div>
+                <div style={ratingColor} className='rating'>{vote_average}</div>
               </div>
               <div className='categInfo'>
                 <Link className='categTitle' to={`/singleItem/${type}/${id}`}><h3>{title}</h3></Link>

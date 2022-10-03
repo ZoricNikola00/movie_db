@@ -44,7 +44,7 @@ const TopRatedTVShows = () => {
             <div key={id} className='item'>
               <div className='posterCont'>
                 <Link to={`/singleItem/${type}/${id}`}><img src={`${img_path}${poster_path}`}/></Link>
-                <div style={ratingColor} className='rating'>{vote_average*10}</div>
+                <div style={ratingColor} className='rating'>{vote_average}</div>
                 <div className="bookmark" onClick={()=>toggle(id,name,poster_path,type,'watchlist')}><FaBookmark style={styleBookmark} className="star"/></div>
               </div>
               <div className='categInfo'>
