@@ -11,6 +11,8 @@ const initialState={
 
 
 const AppProvider = ({ children }) => {
+  const [showMenu,setShowMenu]=useState(false)
+
     const [movies,dispatch]=useReducer(reducer,[],()=>{
         const localData=localStorage.getItem('movies')
         return localData?.length>0?JSON.parse(localData):initialState
@@ -38,7 +40,7 @@ const AppProvider = ({ children }) => {
     }
     console.log(fetchData('https://api.themoviedb.org/3/movie/now_playing?api_key=72de8895bb64376912ef844faac64a10&page='))
 
-    return <AppContext.Provider value={{rate,fetchData,remove,toggle,...movies}}>{children}</AppContext.Provider>
+    return <AppContext.Provider value={{showMenu,setShowMenu,rate,fetchData,remove,toggle,...movies}}>{children}</AppContext.Provider>
 }
 
 
