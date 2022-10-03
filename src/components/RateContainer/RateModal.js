@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import {FaTimes,FaStar} from 'react-icons/fa'
 import { useGlobalContext } from '../../context'
 
-const RateModal = ({setRatingModal,id,poster_path,titleCorrect,type}) => {
-    const [stars,setStars]=useState(1)
+const RateModal = ({rating,setRatingModal,id,poster_path,titleCorrect,type}) => {
+    const [stars,setStars]=useState(rating || 0)
     const arr=[1,2,3,4,5,6,7,8,9,10]
     const{rate}=useGlobalContext()
     const rateThis=(i)=>{
