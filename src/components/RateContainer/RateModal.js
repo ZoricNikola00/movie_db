@@ -5,13 +5,18 @@ import { useGlobalContext } from '../../context'
 const RateModal = ({rating,setRatingModal,id,poster_path,titleCorrect,type}) => {
     const [stars,setStars]=useState(rating || 0)
     const arr=[1,2,3,4,5,6,7,8,9,10]
-    const{rate}=useGlobalContext()
+    const{rate,remove}=useGlobalContext()
     const rateThis=(i)=>{
         setStars(p=>p=i+1)
     }
     const confirm=()=>{
         rate(id,titleCorrect,poster_path,type,stars)
         setRatingModal(false)
+    }
+    const removeRating=()=>{
+        remove(id,'rated')
+        setRatingModal(false)
+
     }
   return (
     <div className='rateContainer'>
@@ -27,7 +32,8 @@ const RateModal = ({rating,setRatingModal,id,poster_path,titleCorrect,type}) => 
                 })}
                 
             </div>
-            <button onClick={confirm}>Confirm Rating</button>
+            <button className='confirmRating' onClick={confirm}>Confirm Rating</button>
+            <button className='confirmRating remove' onClick={removeRating}>Remove Rating</button>
         </div>
     </div>
   )
