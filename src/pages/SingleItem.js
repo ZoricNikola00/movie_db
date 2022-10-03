@@ -22,7 +22,7 @@ const SingleItem = () => {
         return <div>{error}</div>
     }
     
-    const {budget,revenue,title,homepage,name,status,vote_average,first_air_date,backdrop_path,last_air_date,genres,original_language,tagline,runtime,release_date,poster_path,overview,original_title}=data
+    const {imdb_id,budget,revenue,title,homepage,name,status,vote_average,first_air_date,backdrop_path,last_air_date,genres,original_language,tagline,runtime,release_date,poster_path,overview,original_title}=data
     const titleCorrect=type==='tv'?name:title
     const date=release_date && type==='movie'?release_date.slice(0,4): first_air_date && first_air_date.slice(0,4)!==last_air_date.slice(0,4)?`${first_air_date.slice(0,4)}-${last_air_date.slice(0,4)}`:`${first_air_date && first_air_date.slice(0,4)}-`
     const ratingColor={
@@ -83,7 +83,7 @@ const SingleItem = () => {
             </div>
             <div className="additionalInfo">
                 <div >
-                    <FaImdb className="imdbSingle"/>
+                    <a href={`https://www.imdb.com/title/${imdb_id}/`}><FaImdb className="imdbSingle"/></a>
                 </div>
                 {original_title &&<div>
                     <p>Original Title</p>
