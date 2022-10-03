@@ -22,7 +22,8 @@ const sublinks = [
       page:'Profile',
       links:[
         {label:'favorite',url:'/favorite/'},
-        {label:'watchlist', url:'/watchlist/'}
+        {label:'watchlist', url:'/watchlist/'},
+        {label:'rated', url:'/rated/'}
       ]
     },
     {

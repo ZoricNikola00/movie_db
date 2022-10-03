@@ -16,6 +16,7 @@ import Cast from "./pages/Cast";
 import {FaArrowUp} from 'react-icons/fa'
 import { useState } from "react";
 import Quiz from "./pages/Quiz";
+import Rated from "./pages/Rated";
 
 
 function App() {
@@ -50,6 +51,7 @@ window.onscroll=(()=>{
           <Route path="/favorite/" element={<Favorite/>}/>
           <Route path="/quiz/" element={<Quiz/>}/>
           <Route path="/watchlist/" element={<Watchlist/>}/>
+          <Route path="/rated/" element={<Rated/>}/>
         </Routes>
       </Router>
     </div>
