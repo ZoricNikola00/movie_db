@@ -34,14 +34,37 @@ export const reducer=(state,action)=>{
                   media:action.movie.media
               }]}
         }
-}
-if(action.type==='REMOVE'){
-    if(action.which==='favorite'){
-        return {...state, favorites:state.favorites.filter(x=>action.id!==x.id)}
+    }
+    if(action.type==='RATE'){
+        if(state.rated.some(x=>parseInt(x.id)===parseInt(action.ratedShow.id))){
+            return  {...state, rated:state.rated.map(x=>parseInt(action.ratedShow.id)===parseInt(x.id)?({...x,rating:action.ratedShow.rating}):x)}
         }
-    if(action.which==='watchlist'){
-        return {...state, watchlist:state.watchlist.filter(x=>action.id!==x.id)}
-    }    
-}
+        const ratedEl={...state,rated:[...state.rated,{
+            id:action.ratedShow.id,
+            title:action.ratedShow.title,
+            img:action.ratedShow.img,
+            media:action.ratedShow.media,
+            rating:action.ratedShow.rating
+        }]}
+        return state.rated.length>0? ratedEl:{...state, rated:[{
+            id:action.ratedShow.id,
+            title:action.ratedShow.title,
+            img:action.ratedShow.img,
+            media:action.ratedShow.media,
+            rating:action.ratedShow.rating
+        }]}
+    }
+    if(action.type==='REMOVE'){
+        if(action.which==='favorite'){
+            return {...state, favorites:state.favorites.filter(x=>action.id!==x.id)}
+            }
+        if(action.which==='watchlist'){
+            return {...state, watchlist:state.watchlist.filter(x=>action.id!==x.id)}
+        }
+        if(action.which==='rated'){
+            return {...state, rated:state.rated.filter(x=>action.id!==x.id)}
+        }   
+    }
 
 }
+
