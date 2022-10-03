@@ -2,14 +2,17 @@ import { useParams,Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
 import { useQuery } from "@tanstack/react-query";
 import ReactLoading from 'react-loading';
-import {FaImdb,FaLink,FaArrowRight,FaBookmark, FaStar} from 'react-icons/fa'
+import {FaImdb,FaLink,FaArrowRight,FaBookmark, FaStar,FaHeart} from 'react-icons/fa'
+import { useState } from "react";
+import RateModal from "../components/RateContainer/RateModal";
 const SingleItem = () => {
     const {id,type}=useParams()
     const width = window.innerWidth<480;
-    const {fetchData,toggle,watchlist,favorites}=useGlobalContext()
+    const {fetchData,toggle,watchlist,favorites,rated}=useGlobalContext()
     const img_path='https://image.tmdb.org/t/p/w1280'
     const {data,isError,isLoading,error}=useQuery(['movie',id],()=>fetchData(`https://api.themoviedb.org/3/${type}/${id}?api_key=72de8895bb64376912ef844faac64a10&language=en-US`))
-
+    const [ratingModal,setRatingModal]=useState(false)
+    const [ratingMiniWindow,setRatingMiniWindow]=useState(false)
     const {data:people,isLoading:loadPeople}=useQuery(['people'],()=>fetchData(`https://api.themoviedb.org/3/${type}/${id}/credits?api_key=72de8895bb64376912ef844faac64a10&language=en-US`))
 
     if(isLoading){
@@ -18,7 +21,7 @@ const SingleItem = () => {
     if(isError){
         return <div>{error}</div>
     }
-    console.log(data)
+    
     const {budget,revenue,title,homepage,name,status,vote_average,first_air_date,backdrop_path,last_air_date,genres,original_language,tagline,runtime,release_date,poster_path,overview,original_title}=data
     const titleCorrect=type==='tv'?name:title
     const date=release_date && type==='movie'?release_date.slice(0,4): first_air_date && first_air_date.slice(0,4)!==last_air_date.slice(0,4)?`${first_air_date.slice(0,4)}-${last_air_date.slice(0,4)}`:`${first_air_date && first_air_date.slice(0,4)}-`
@@ -31,8 +34,12 @@ const SingleItem = () => {
     const styleBookmark={
         color:watchlist?.some(x=>parseInt(x.id)===parseInt(id))?'rgb(196, 196, 36)':'rgb(128, 126, 126)'
     }
+    const styleRating={
+        color:rated?.some(x=>parseInt(x.id)===parseInt(id))?'rgb(196, 196, 36)':'rgb(128, 126, 126)'
+    }
   return (
     <div className="singleItem">
+        {ratingModal && <RateModal type={type} rating={rated?.find(x=>parseInt(x.id)===parseInt(id))?.rating} setRatingModal={setRatingModal} {...data} titleCorrect={titleCorrect}/>}
         <div className="overviewCont">
             {!width && <div className="shadow" style={{backgroundImage:`url(${img_path}${backdrop_path})`,backgroundSize:'cover'}}></div>}
             <div className="posterSingle">
@@ -50,9 +57,10 @@ const SingleItem = () => {
                     {type==='movie' && <p>{runtime}min</p>}
                 </div>
                 <div className="ratings">
-                    <div style={ratingColor} className='voteScore single'>{(vote_average*10).toFixed()}</div>
+                    <div style={ratingColor} className='voteScore single'>{(vote_average).toFixed(1)}</div>
                     <p>Rating</p>
-                    <div onClick={(e)=>toggle(id,titleCorrect,poster_path,type,'favorite')}><FaStar style={styleStar} className="star"/></div>
+                    <div onClick={(e)=>toggle(id,titleCorrect,poster_path,type,'favorite')}><FaHeart style={styleStar} className="star"/></div>
+                    <div onMouseEnter={()=>setRatingMiniWindow(true)} onMouseLeave={()=>setRatingMiniWindow(false)} onClick={()=>setRatingModal(true)} style={styleRating} className="rateShow">{ratingMiniWindow && rated?.some(x=>parseInt(x.id)===parseInt(id)) && <div className="ratingMini">Rated {rated?.find(x=>parseInt(x.id)===parseInt(id)).rating}</div>}<FaStar className="star"/></div>
                 </div>
                 <p className="tag">{tagline}</p>
                 <div className="desc">
