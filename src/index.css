@@ -300,6 +300,94 @@ background-color: #030f22b0;
   color: aliceblue;
   margin: 0 10px;
 }
+.rateShow{
+  margin-left: 10px;
+  position: relative;
+ }
+.ratingMini{
+  position: absolute;
+  top: -90%;
+  right: 50%;
+  transform: translateX(50%);
+  background-color: aliceblue;
+  color: #0f243f;
+  font-weight: 700;
+  border-radius: 10px;
+  font-size: 17px;
+  padding: 10px;
+  text-align: center;
+  width: 100px;
+}
+ .rateContainer{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000b4;
+  z-index: 2;
+ }
+ .rateContent{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: 180px;
+  border-radius: 30px;
+  background-color: aliceblue;
+ }
+ .rateContent h3{
+  text-align: center;
+ }
+ .rateContent button{
+  width: 30%;
+  margin: 0 auto 10px auto;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 30px;
+  border:3px solid #0f243f;
+  font-weight: 700;
+ }
+ .rateStars{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+ }
+ .closeRateModal{
+  position: absolute;
+  font-size: 20px;
+  cursor: pointer;
+  right: 10px;
+  top: 10px;
+ }
+ .rateStars div{
+  margin: 10px;
+  font-size: 30px;
+  cursor: pointer;
+ }
+ .myRating{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid #0f243f;
+  top: 83%;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  color: #0f243f;
+  font-size: 30px;
+  font-weight: 700;
+  background-color: aliceblue;
+ }
+
 .tag{
   color: aliceblue;
   font-style: italic;
@@ -1475,5 +1563,19 @@ top: 10px;
     position: absolute;
     right: 30px;
     top: 10px;
+    }
+    .rateContent h3{
+     margin-bottom: 0;
+    }
+    .rateContent button{
+     width: 40%;
+    }
+    .closeRateModal{
+     font-size: 30px;
+    }
+    .rateStars div{
+     margin: 3px;
+     font-size: 22px;
+     cursor: pointer;
     }
 }
