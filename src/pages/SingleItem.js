@@ -29,7 +29,7 @@ const SingleItem = () => {
         border:vote_average>6.99?'green 4px solid':vote_average>3.99?'yellow 4px solid':'red 4px solid'
     }
     const styleStar={
-        color:favorites?.some(x=>parseInt(x.id)===parseInt(id))?'rgb(196, 196, 36)':'rgb(128, 126, 126)'
+        color:favorites?.some(x=>parseInt(x.id)===parseInt(id))?'rgb(180, 48, 48)':'rgb(128, 126, 126)'
        }
     const styleBookmark={
         color:watchlist?.some(x=>parseInt(x.id)===parseInt(id))?'rgb(196, 196, 36)':'rgb(128, 126, 126)'
@@ -39,12 +39,12 @@ const SingleItem = () => {
     }
   return (
     <div className="singleItem">
-        {ratingModal && <RateModal type={type} rating={rated?.find(x=>parseInt(x.id)===parseInt(id))?.rating} setRatingModal={setRatingModal} {...data} titleCorrect={titleCorrect}/>}
+        {ratingModal && <RateModal t={type} rating={rated?.find(x=>parseInt(x.id)===parseInt(id))?.rating} setRatingModal={setRatingModal} {...data} titleCorrect={titleCorrect}/>}
         <div className="overviewCont">
             {!width && <div className="shadow" style={{backgroundImage:`url(${img_path}${backdrop_path})`,backgroundSize:'cover'}}></div>}
             <div className="posterSingle">
                 <img src={`${img_path}${poster_path}`}/>
-                <div className="bookmark" onClick={(e)=>toggle(id,title,poster_path,type,'watchlist')}><FaBookmark style={styleBookmark} className="star"/></div>
+                <div className="bookmark" onClick={(e)=>toggle(id,titleCorrect,poster_path,type,'watchlist')}><FaBookmark style={styleBookmark} className="star"/></div>
             </div>
             <div className="overview">
                 {width && <div className="shadow" style={{backgroundImage:`url(${img_path}${backdrop_path})`,backgroundSize:'cover',backgroundPosition:'center'}}></div>}
