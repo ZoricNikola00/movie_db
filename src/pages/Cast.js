@@ -8,7 +8,7 @@ const img_path='https://image.tmdb.org/t/p/w1280'
 const Cast = () => {
     const {fetchData}=useGlobalContext()
     const {id,type}=useParams()
-    const {data,isLoading,isError,error}=useQuery(['cast'],()=>fetchData(`https://api.themoviedb.org/3/${type}/${id}/credits?api_key=${env.process.TMDB_API_KEY}&language=en-US`))
+    const {data,isLoading,isError,error}=useQuery(['cast'],()=>fetchData(`https://api.themoviedb.org/3/${type}/${id}/credits?api_key=${procces.env.TMDB_API_KEY}&language=en-US`))
 
     if(isLoading){
         return <ReactLoading className='loader' type='spinningBubbles' color={'#273b55'} height={'300px'} width={'300px'}/>

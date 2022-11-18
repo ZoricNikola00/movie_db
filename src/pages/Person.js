@@ -14,9 +14,9 @@ const Person = () => {
     const {id}=useParams()
     const {fetchData}=useGlobalContext()
     const [showBio,setShowBio]=useState(true)
-    const{data:person,isLoading,isError:errPerson,error}=useQuery(['person',id],()=>fetchData(`https://api.themoviedb.org/3/person/${id}?api_key=${env.process.TMDB_API_KEY}&language=en-US`))
-    const{data:social,isLoading:loadSocial,isError:errSocial}=useQuery(['social'],()=>fetchData(`https://api.themoviedb.org/3/person/${id}/external_ids?api_key=${env.process.TMDB_API_KEY}&language=en-US`))
-    const{data:movieCredits,isLoading:loadMovies,isError:errCredits}=useQuery(['movie'],()=>fetchData(`https://api.themoviedb.org/3/person/${id}/combined_credits?api_key=${env.process.TMDB_API_KEY}&language=en-US`))
+    const{data:person,isLoading,isError:errPerson,error}=useQuery(['person',id],()=>fetchData(`https://api.themoviedb.org/3/person/${id}?api_key=${procces.env.TMDB_API_KEY}&language=en-US`))
+    const{data:social,isLoading:loadSocial,isError:errSocial}=useQuery(['social'],()=>fetchData(`https://api.themoviedb.org/3/person/${id}/external_ids?api_key=${procces.env.TMDB_API_KEY}&language=en-US`))
+    const{data:movieCredits,isLoading:loadMovies,isError:errCredits}=useQuery(['movie'],()=>fetchData(`https://api.themoviedb.org/3/person/${id}/combined_credits?api_key=${procces.env.TMDB_API_KEY}&language=en-US`))
 
     if(isLoading || loadSocial || loadMovies){
         return <ReactLoading className='loader' type='spinningBubbles' color={'#273b55'} height={'300px'} width={'300px'}/>

@@ -13,7 +13,7 @@ const SearchPage = () => {
   const {fetchData}=useGlobalContext()
   const [page,setPage]=useState(1)
   const [searchType,setSearchType]=useState('movie')
-  const {data,isLoading,isError,error,refetch}=useQuery(['data'],()=>fetchData(`https://api.themoviedb.org/3/search/${searchType}?api_key=${env.process.TMDB_API_KEY}&language=en-US&query=${query}&page=${page}`))
+  const {data,isLoading,isError,error,refetch}=useQuery(['data'],()=>fetchData(`https://api.themoviedb.org/3/search/${searchType}?api_key=${procces.env.TMDB_API_KEY}&language=en-US&query=${query}&page=${page}`))
   const navigate=useNavigate()
   const redirect=(id,type)=>{
     if(searchType==='person'){
