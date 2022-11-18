@@ -8,7 +8,7 @@ import { FaLongArrowAltLeft, FaLongArrowAltRight,FaBookmark } from 'react-icons/
 const TopRatedMovies = () => {
   const {fetchData,toggle,watchlist}=useGlobalContext()
   const [page,setPage]=useState(1)
-  const {data,isLoading,isError,error,refetch}=useQuery(['top-movies'],()=>fetchData(`https://api.themoviedb.org/3/movie/top_rated?api_key=72de8895bb64376912ef844faac64a10&language=en-US&page=${page}`),{onSuccess:()=>  window.scrollTo(0, 0)})
+  const {data,isLoading,isError,error,refetch}=useQuery(['top-movies'],()=>fetchData(`https://api.themoviedb.org/3/movie/top_rated?api_key=${env.process.TMDB_API_KEY}&language=en-US&page=${page}`),{onSuccess:()=>  window.scrollTo(0, 0)})
   const img_path='https://image.tmdb.org/t/p/w1280'
 
   useEffect(()=>{

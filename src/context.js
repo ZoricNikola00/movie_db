@@ -38,7 +38,7 @@ const AppProvider = ({ children }) => {
         return await axios(url).then(res=>{return res.data}).catch(err=>console.log(err))
             
     }
-    console.log(fetchData('https://api.themoviedb.org/3/movie/now_playing?api_key=72de8895bb64376912ef844faac64a10&page='))
+    console.log(fetchData(`https://api.themoviedb.org/3/movie/now_playing?api_key=${env.process.TMDB_API_KEY}&page=`))
 
     return <AppContext.Provider value={{showMenu,setShowMenu,rate,fetchData,remove,toggle,...movies}}>{children}</AppContext.Provider>
 }

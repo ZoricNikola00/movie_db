@@ -9,7 +9,7 @@ const img_path='https://image.tmdb.org/t/p/w1280'
 const People = () => {
     const {fetchData}=useGlobalContext()
     const [page,setPage]=useState(1)
-    const {data,isLoading,isError,error,refetch}=useQuery(['people'],()=>fetchData(`https://api.themoviedb.org/3/person/popular?api_key=72de8895bb64376912ef844faac64a10&language=en-US&page=${page}`),{onSuccess:()=>  window.scrollTo(0, 0)})
+    const {data,isLoading,isError,error,refetch}=useQuery(['people'],()=>fetchData(`https://api.themoviedb.org/3/person/popular?api_key=${env.process.TMDB_API_KEY}&language=en-US&page=${page}`),{onSuccess:()=>  window.scrollTo(0, 0)})
     useEffect(() => {
       refetch()
     }, [page])
